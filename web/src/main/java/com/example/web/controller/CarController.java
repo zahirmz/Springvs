@@ -77,6 +77,7 @@ public class CarController {
 
     }
 
+    
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteCar(@PathVariable Long id)
     {
@@ -89,6 +90,7 @@ public class CarController {
             return ResponseEntity.status(404).body("car not found"+id);
         }
     }
+
     @GetMapping("/brand/{brand}")
     public ResponseEntity<List<Car>> getCarsByBrand(@PathVariable String brand) {
         List<Car> cars = cserv.getCarsByBrand(brand);
