@@ -33,5 +33,26 @@ public class CarService {
     {
         return carRepository.save(car);
     }
+
+    public Boolean deleteCar(Long id) {
+        if(carRepository.existsById(id))
+        {
+            carRepository.deleteById(id);
+            return true;
+        }
+        else{
+            return false;
+
+        }
+    }
+
+    public List<Car> getCarsByBrand(String brand) {
+    return carRepository.findByBrand(brand);
+    }
+
+    public List<Car> getCarsByModel(String model) {
+        return carRepository.findByModel(model);
+    }
  
+
 }
